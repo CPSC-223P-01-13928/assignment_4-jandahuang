@@ -1,8 +1,5 @@
-import calendar
-from dataclasses import dataclass
-from http.client import _DataType
 import json
-from calendar import month_name
+import calendar
 
 def read_data(file_name):
     try:
@@ -55,13 +52,9 @@ def tot_rain(data, date):
     return sum
 
 def report_daily(data, date):
-    year = date[:4]
-    month = date[4:6]
-    day = date[6:8]
-    
-    display = "========================= DAILY REPORT ========================\
-            Date                      Time  Temperature  Humidity  Rainfall\
-            ====================  ========  ===========  ========  ======== "
+    display = "========================= DAILY REPORT ========================\n"
+    display += "       Date                      Time  Temperature  Humidity  Rainfall\n"
+    display += "       ====================  ========  ===========  ========  ======== "
     for key in data:
         if date == key[0:8]:
             m = calendar.month_name(int(date[4:6]) + \
@@ -75,10 +68,26 @@ def report_daily(data, date):
     
     return display
 
-def report_historical():
-    display = "============================== HISTORICAL REPORT ===========================\			  
-        Minimum      Maximum   Minumum   Maximum     Total\
-        Date                  Temperature  Temperature  Humidity  Humidity  Rainfall\
-        ====================  ===========  ===========  ========  ========  ======== "
-        
-        
+
+def report_historical(data):
+    display = "============================== HISTORICAL REPORT ===========================\n"
+    display += "              Minimum      Maximum   Minumum   Maximum     Total/n"
+    display += "Date                  Temperature  Temperature  Humidity  Humidity  Rainfall\n"
+    display += "====================  ===========  ===========  ========  ========  ======== \n"
+
+    h = ''
+
+    for key in data[0:8]:
+        if h == key[0:8]:
+            continue
+        else:
+            h == key[0:8]
+            m = calendar.month_name[int(h[4:6])] + " " + str(int(h[6:8])) + "," + str(int(h[0:4]))
+
+    min_temp = min_temperature(data, h)
+    max_temp = max_temperature(data, h)
+    min_hum = min_humidity(data, h)
+    rain = tot_rain(data, h)
+
+    display += f'{m:20}{min_temp:13}{max_temp:13}{min_hum:10}{rain:10:2f}' + "\n"
+    return display
