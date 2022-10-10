@@ -2,7 +2,7 @@ import unittest
 import io
 import sys
 from unittest.mock import patch
-
+ 
 import os
 def remove_file(filename):
     if os.path.exists(filename):
