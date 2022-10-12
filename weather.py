@@ -1,15 +1,15 @@
 import json
 import calendar
 
-def read_data(file_name):
+def read_data(filename):
     try:
-        with open(file_name, 'r') as f:
+        with open(filename, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         return {}
     
-def write_data(data, file_name):
-    with open(file_name, 'w') as f:
+def write_data(data, filename):
+    with open(filename, 'w') as f:
         json.dump(data,f)
 
 def max_temperature(data, date):

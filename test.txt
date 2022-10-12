@@ -1,23 +1,5 @@
-EE.......
-======================================================================
-ERROR: test_list_int (__main__.Test01_weather_read_data_errorhandle)
-*** Test01 **** FUNCTION CALL: weather.read_data(filename='test74653.dat') *** EXPECT: {} ***
+.........
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "c:\Users\jandahuang\Documents\GitHub\assignment_4-jandahuang\test.py", line 18, in test_list_int
-    r = weather.read_data(filename='test74653.dat')
-TypeError: read_data() got an unexpected keyword argument 'filename'
+Ran 9 tests in 0.014s
 
-======================================================================
-ERROR: test_list_int (__main__.Test02_weather_write_data)
-*** Test02 **** FUNCTION CALL: weather.write_data(data={"20210203075501": {"t": 55, "h": 87, "r": 0}}, filename='test74653.dat') THEN weather.read_data(filename='test74653.dat') *** EXPECT: {"20210203075501": {"t": 55, "h": 87, "r": 0}} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "c:\Users\jandahuang\Documents\GitHub\assignment_4-jandahuang\test.py", line 31, in test_list_int
-    weather.write_data(data={"20210203075501": {"t": 55, "h": 87, "r": 0}}, filename='test74653.dat')
-TypeError: write_data() got an unexpected keyword argument 'filename'
-
-----------------------------------------------------------------------
-Ran 9 tests in 0.012s
-
-FAILED (errors=2)
+OK
