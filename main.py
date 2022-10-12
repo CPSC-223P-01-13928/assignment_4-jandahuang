@@ -3,14 +3,16 @@ myfile = 'weather.dat'
 
 mychoice = 0
 while(True):
-    print("         ***TUFFY TITIAN WEATHER LOGER MAIN MENU")
+    print("      *** TUFFY TITAN WEATHER LOGGER MAIN MENU")
     print()
-    print("1.Set data FileName")
-    print("2.Add Weather Data")
-    print("3.Print Daily Report")
-    print("4.Print Historical Report")
-    print("9.Exit the program")
-    mychoice = int(input("Enter menu choice:"))
+    print("1. Set data filename")
+    print("2. Add weather data")
+    print("3. Print daily report")
+    print("4. Print historical report")
+    print("9. Exit the program")
+    print()
+    mychoice = int(input("Enter menu choice: "))
+
     print()
     
     if mychoice == 1:
@@ -18,10 +20,10 @@ while(True):
         weather = read_data(file_name = myfile)
     elif mychoice == 2:
         dt = input("Enter date: ")
-        tm = input("Enter time ")
+        tm = input("Enter time: ")
         t = int(input("Enter temperature: "))
-        h = int(input("Enter temperature: "))
-        r = float(input("Enter temperature: "))
+        h = int(input("Enter humidity: "))
+        r = float(input("Enter the Rainfall: "))
         weather[dt + tm] = {'t':t, 'h': h, 'r': r}
         write_data(data = weather, file_name = myfile)
     elif mychoice == 3:
