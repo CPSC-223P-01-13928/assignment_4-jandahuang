@@ -18,6 +18,6 @@ Traceback (most recent call last):
 TypeError: write_data() got an unexpected keyword argument 'filename'
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.023s
+Ran 9 tests in 0.012s
 
 FAILED (errors=2)

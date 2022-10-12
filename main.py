@@ -1,5 +1,5 @@
-from weather import*
-myfile = 'weather.dat'
+from weather import *
+myfile = "weather.dat"
 
 mychoice = 0
 while(True):
